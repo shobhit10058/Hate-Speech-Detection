@@ -97,8 +97,6 @@ def FasttextClassifier(Train_data, Test_data, RequireAnnData):
     # printing the contents of train_data in the temporary file 
     # with __label__ attached with labels as the 
     # fasttext classifier indentifies the labels like this only
-    print(len(Train_data))
-    print(Train_data)
     for i in range(len(Train_data)):
         subsf_1.write(Train_data['text'][i] + '\t' + '__label__' + str(Train_data['hateful'][i]) + '\n')
 
