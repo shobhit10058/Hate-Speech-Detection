@@ -132,7 +132,7 @@ def SGDClassifierWithPipeline(Train_data, Test_data, RequireAnnData):
     pipeline_sgd.fit(Train_data['text'], Train_data['hateful'])
     y_pred = pipeline_sgd.predict(RequireAnnData['text'])
    
-    Output_in_file('predictions/T2.csv', y_pred, RequireAnnData)
+    Output_in_file('predictions/SGD.csv', y_pred, RequireAnnData)
 
     return pipeline_sgd.predict(Test_data['text'])
 
@@ -174,4 +174,4 @@ if __name__ == "__main__":
     Test(FasttextClassifier, train, test, Test_data, 'FT')
 
     #model 4
-    Test(SGDClassifierWithPipeline, train, test, Test_data, 'SP')
+    Test(SGDClassifierWithPipeline, train, test, Test_data, 'SGD')
